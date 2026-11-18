@@ -1,0 +1,158 @@
+
+
+
+
+QUIC                                                          C. Huitema
+Internet-Draft                                      Private Octopus Inc.
+Intended status: Informational                          18 November 2026
+Expires: 22 May 2027
+
+
+        QLOG extensions for Multiple Paths for a QUIC Connection
+                draft-huitema-quic-qlog-multipath-latest
+
+Abstract
+
+   This draft define the QLOG elements that have to be added to the
+   definition of QLOG events for QUIC connections.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   Status information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-huitema-quic-qlog-multipath/.
+
+   Discussion of this document takes place on the QUIC Working Group
+   mailing list (mailto:quic@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/quic/.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/quic/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/huitema/qlog-multipath-extension.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 22 May 2027.
+
+Copyright Notice
+
+   Copyright (c) 2026 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Conventions and Definitions
+   3.  Multipath specific events and event extensions
+   4.  Multipath specific frames
+   5.  Security Considerations
+   6.  IANA Considerations
+   7.  Normative References
+   Acknowledgments
+   Author's Address
+
+1.  Introduction
+
+   The QLOG drafts define the syntax of QLOG
+   [I-D.ietf-quic-qlog-main-schema] and the events and frames for
+   logging QUIC events [I-D.ietf-quic-qlog-quic-events] found in QUIC
+   connections per [RFC9000].  The extensions to [RFC9000] for managing
+   multiple paths for a QUIC connections are defined in [RFC10069],
+   which introduces new concepts such as path, new events such as
+   creating or abandoning paths, and new frames for managing traffic
+   when using multiple paths.  This draft defines the corresponding QLOG
+   extensions.
+
+2.  Conventions and Definitions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+3.  Multipath specific events and event extensions
+
+   TODO.
+
+4.  Multipath specific frames
+
+   TODO.
+
+5.  Security Considerations
+
+   TODO Security
+
+6.  IANA Considerations
+
+   This document has no IANA actions.
+
+7.  Normative References
+
+   [I-D.ietf-quic-qlog-main-schema]
+              Marx, R., Niccolini, L., Seemann, M., and L. Pardue,
+              "qlog: Structured Logging for Network Protocols", Work in
+              Progress, Internet-Draft, draft-ietf-quic-qlog-main-
+              schema-15, 2 November 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-quic-
+              qlog-main-schema-15>.
+
+   [I-D.ietf-quic-qlog-quic-events]
+              Marx, R., Niccolini, L., Seemann, M., and L. Pardue, "QUIC
+              event definitions for qlog", Work in Progress, Internet-
+              Draft, draft-ietf-quic-qlog-quic-events-14, 2 November
+              2026, <https://datatracker.ietf.org/doc/html/draft-ietf-
+              quic-qlog-quic-events-14>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+   [RFC9000]  Iyengar, J., Ed. and M. Thomson, Ed., "QUIC: A UDP-Based
+              Multiplexed and Secure Transport", RFC 9000,
+              DOI 10.17487/RFC9000, May 2021,
+              <https://www.rfc-editor.org/rfc/rfc9000>.
+
+   [RFC10069] Liu, Y., Ed., Ma, Y., De Coninck, Q., Ed., Bonaventure,
+              O., Huitema, C., and M. Kühlewind, Ed., "Managing Multiple
+              Paths for a QUIC Connection", RFC 10069,
+              DOI 10.17487/RFC10069, November 2026,
+              <https://www.rfc-editor.org/rfc/rfc10069>.
+
+Acknowledgments
+
+   TODO acknowledge.
+
+Author's Address
+
+   Christian Huitema
+   Private Octopus Inc.
+   Email: huitema@huitema.net
