@@ -1,4 +1,3 @@
-
 ---
 title: "QLOG extensions for Multiple Paths for a QUIC Connection"
 abbrev: "qlog-multipath"
@@ -69,7 +68,7 @@ defined in {{RFC10069}} can be expressed by extending the schema
 defined in {{I-D.ietf-quic-qlog-quic-events}}.
 Per the requirements in Section 8 of {{I-D.ietf-quic-qlog-main-schema}},
 this document registers extensions to the quic namespace.
-The event schema URI is: urn:ietf:params:qlog:events:quic#multipath.
+The event schema URI is: urn:ietf:params:qlog:events:quic-multipath.
 
 
 ## Draft Event Schema Identification
@@ -78,13 +77,13 @@ This section is to be removed before publishing as an RFC.
 
    Only implementations of the final, published RFC can use the events
    belonging to the event schema with the URI
-   urn:ietf:params:qlog:events:quic#multipath.  Until such an RFC exists,
+   urn:ietf:params:qlog:events:quic-multipath.  Until such an RFC exists,
    implementations MUST NOT identify themselves using this URI.
 
    Implementations of draft versions of the event schema MUST append the
    string "-" and the corresponding draft number to the URI.  For
    example, draft 00 of this document is identified using the URI
-   urn:ietf:params:qlog:events:quic#multipath-00.
+   urn:ietf:params:qlog:events:quic-multipath-00.
 
 # Multipath specific events and event extensions
 
@@ -186,7 +185,7 @@ TODO Security
 This document registers a new entry in the "qlog event schema URIs"
 registry, which was created in Section 15 of [QLOG-MAIN]:
 
-   Event schema URI:  urn:ietf:params:qlog:events:quic#multipath
+   Event schema URI:  urn:ietf:params:qlog:events:quic-multipath
 
 Event-types: `packet_sent`, `packet_received`, `packet_dropped`,
 `packet_buffered`, `packets_acked`, `packet_lost`, `recovery_metrics_updated`,
