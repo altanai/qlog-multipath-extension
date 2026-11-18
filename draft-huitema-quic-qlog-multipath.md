@@ -29,26 +29,45 @@ author:
 
 normative:
 
+   RFC9000:
+   RFC10069:
+   draft-ietf-quic-qlog-quic-events:
+   draft-ietf-quic-qlog-main-schema:
+
+
 informative:
 
 ...
 
 --- abstract
 
-TODO Abstract
+This draft define the QLOG elements that have to be added to
+the definition of QLOG events for QUIC connections.
 
 
 --- middle
 
 # Introduction {#intro}
 
-TODO Introduction
-
+The QLOG drafts define the syntax of QLOG {{draft-ietf-quic-qlog-main-schema}}
+and the events and frames for logging QUIC events {{draft-ietf-quic-qlog-quic-events}}
+found in QUIC connections per {{RFC9000}}. The extensions to {{RFC9000}} for
+managing multiple paths for a QUIC connections are defined in {{RFC100069}},
+which introduces new concepts such as path, new events such as creating or
+abandoning paths, and new frames for managing traffic when using multiple
+paths. This draft defines the corresponding QLOG extensions.
 
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
 
+# Multipath specific events and event extensions
+
+TODO.
+
+# Multipath specific frames
+
+TODO.
 
 # Security Considerations {#security}
 
