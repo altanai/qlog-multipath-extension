@@ -52,7 +52,7 @@ the definition of QLOG events for QUIC connections.
 The QLOG drafts define the syntax of QLOG {{I-D.ietf-quic-qlog-main-schema}}
 and the events and frames for logging QUIC events {{I-D.ietf-quic-qlog-quic-events}}
 found in QUIC connections per {{RFC9000}}. The extensions to {{RFC9000}} for
-managing multiple paths for a QUIC connections are defined in {{RFC100069}},
+managing multiple paths for a QUIC connections are defined in {{RFC10069}},
 which introduces new concepts such as path, new events such as creating or
 abandoning paths, and new frames for managing traffic when using multiple
 paths. This draft defines the corresponding QLOG extensions.
