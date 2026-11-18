@@ -66,11 +66,13 @@ Table of Contents
 
    1.  Introduction
    2.  Conventions and Definitions
-   3.  Multipath specific events and event extensions
-   4.  Multipath specific frames
-   5.  Security Considerations
-   6.  IANA Considerations
-   7.  Normative References
+   3.  Event Schema Definition
+     3.1.  Draft Event Schema Identification
+   4.  Multipath specific events and event extensions
+   5.  Multipath specific frames
+   6.  Security Considerations
+   7.  IANA Considerations
+   8.  Normative References
    Acknowledgments
    Author's Address
 
@@ -94,23 +96,54 @@ Table of Contents
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-3.  Multipath specific events and event extensions
+3.  Event Schema Definition
+
+   This document describes how the extend extensions to the core QUIC
+   protocol defined in [RFC10069] can be expressed by extending the
+   schema defined in [I-D.ietf-quic-qlog-quic-events].  Per the
+   requirements in Section 8 of [I-D.ietf-quic-qlog-main-schema], this
+   document registers extensions to the quic namespace.  The event
+   schema URI is: urn:ietf:params:qlog:events:quic-multipath.
+
+3.1.  Draft Event Schema Identification
+
+   This section is to be removed before publishing as an RFC.
+
+   Only implementations of the final, published RFC can use the events
+   belonging to the event schema with the URI
+   urn:ietf:params:qlog:events:quic-multipath.  Until such an RFC
+   exists, implementations MUST NOT identify themselves using this URI.
+
+   Implementations of draft versions of the event schema MUST append the
+   string "-" and the corresponding draft number to the URI.  For
+   example, draft 00 of this document is identified using the URI
+   urn:ietf:params:qlog:events:quic-multipath-00.
+
+4.  Multipath specific events and event extensions
 
    TODO.
 
-4.  Multipath specific frames
+5.  Multipath specific frames
 
    TODO.
 
-5.  Security Considerations
+6.  Security Considerations
 
    TODO Security
 
-6.  IANA Considerations
+7.  IANA Considerations
 
-   This document has no IANA actions.
+   This document registers a new entry in the "qlog event schema URIs"
+   registry, which was created in Section 15 of [QLOG-MAIN]:
 
-7.  Normative References
+   Event schema URI: urn:ietf:params:qlog:events:quic-multipath
+
+   Event-types: TODO.  List the new events that are created here.
+
+   Description: Event definitions related to the extensions to the QUIC
+   transport protocol defined in [RFC10069].
+
+8.  Normative References
 
    [I-D.ietf-quic-qlog-main-schema]
               Marx, R., Niccolini, L., Seemann, M., and L. Pardue,
