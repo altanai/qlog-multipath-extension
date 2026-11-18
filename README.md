@@ -1,20 +1,29 @@
-# QLOG multipath extension
 
-We are working here to define the first draft of "QLOG Multipath extensions". We want to
-define an extension for the
-[QUIC event definitions for qlog](https://datatracker.ietf.org/doc/draft-ietf-quic-qlog-quic-events/)
-in order to properly log events and frames for QUIC connection that manage multiple paths according to
-[RFC 10069](https://www.rfc-editor.org/info/rfc10069/).
+# QLOG extensions for Multiple Paths for a QUIC Connection
 
+This is the working area for the individual Internet-Draft, "QLOG extensions for Multiple Paths for a QUIC Connection".
 
-
-Check the \[latest draft](https://example.com/)
+* [Editor's Copy](https://huitema.github.io/qlog-multipath-extension/#go.draft-huitema-quic-qlog-multipath.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-huitema-quic-qlog-multipath)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-huitema-quic-qlog-multipath)
+* [Compare Editor's Copy to Individual Draft](https://huitema.github.io/qlog-multipath-extension/#go.draft-huitema-quic-qlog-multipath.diff)
 
 
-Once the individual draft is ready, we will submit it for adoption.
+## Contributing
 
-This repo was created from the Internet Dratf template created by Martin Thomson.
-[Read the
-instructions](https://github.com/martinthomson/i-d-template/blob/main/doc/TEMPLATE.md)
-for more information.
+See the
+[guidelines for contributions](https://github.com/huitema/qlog-multipath-extension/blob/main/CONTRIBUTING.md).
 
+The contributing file also has tips on how to make contributions, if you
+don't already know how to do that.
+
+## Command Line Usage
+
+Formatted text and HTML versions of the draft can be built using `make`.
+
+```sh
+$ make
+```
+
+Command line usage requires that you have the necessary software installed.  See
+[the instructions](https://github.com/martinthomson/i-d-template/blob/main/doc/SETUP.md).
