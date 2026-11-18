@@ -1,13 +1,13 @@
-# Internet-Draft Template Repository
+# QLOG multipath extension
 
-Use this repository as a template if you want to start working on
-[IETF](https://www.ietf.org/) documents. [Click here to create a new repository using the
-template](https://github.com/martinthomson/internet-draft-template/generate).
-Make sure to check "Include all branches", or you will need to enable GitHub Pages manually.
+We are working here to define the first draft of "QLOG Multipath extensions". We want to
+define an extension for the 
+[QUIC event definitions for qlog](https://datatracker.ietf.org/doc/draft-ietf-quic-qlog-quic-events/)
+in order to properly log events and frames for QUIC connection that manage multiple paths according to
+[RFC 10069](https://www.rfc-editor.org/info/rfc10069/).
+Once the individual draft is ready, we will submit it for adoption.
 
+This repo was created from the Internet Dratf template created by Martin Thomson.
 [Read the
 instructions](https://github.com/martinthomson/i-d-template/blob/main/doc/TEMPLATE.md)
 for more information.
-
-Once you have created your own repository, start work by
-[renaming the `draft-todo-yourname-protocol.md` file](../../edit/main/draft-todo-yourname-protocol.md).
