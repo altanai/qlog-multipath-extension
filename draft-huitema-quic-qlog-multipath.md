@@ -66,12 +66,13 @@ paths. This draft defines the corresponding QLOG extensions.
 
 {::boilerplate bcp14-tagged}
 
-# Event Schema Definition
+# Event Schema Definition {#event-schema}
 
 This document extends the `quic` namespace of
 {{I-D.ietf-quic-qlog-quic-events}} to cover the multipath extension
-defined in {{RFC10069}}. The event schema URI is
-`urn:ietf:params:qlog:events:quic#multipath`, following
+defined in {{RFC10069}}. The event schema URN for this extension is
+`urn:ietf:params:qlog:events:quic#multipath`. The fragment `multipath`
+identifies the extension within the `quic` namespace, as specified in
 {{Section 8.1 of I-D.ietf-quic-qlog-main-schema}}.
 
 
@@ -79,15 +80,10 @@ defined in {{RFC10069}}. The event schema URI is
 
 This section is to be removed before publishing as an RFC.
 
-   Only implementations of the final, published RFC can use the events
-   belonging to the event schema with the URI
-   `urn:ietf:params:qlog:events:quic#multipath`.  Until such an RFC exists,
-   implementations MUST NOT identify themselves using this URI.
-
-   Implementations of draft versions of the event schema MUST append the
-   string "-" and the corresponding draft number to the URI.  For
-   example, draft 00 of this document is identified using the URI
-   `urn:ietf:params:qlog:events:quic#multipath-00`.
+Only implementations of the published RFC can use the unversioned URN
+defined in {{event-schema}}. Implementations of a draft version MUST
+append a hyphen and the corresponding draft number to that URN. For
+example, draft 00 uses `urn:ietf:params:qlog:events:quic#multipath-00`.
 
 # Multipath specific events and event extensions {#mp-events}
 
@@ -97,25 +93,31 @@ events record the frames that carry path management signals. A single
 change can involve several frames, and a local decision can precede the
 first frame that signals it.
 
-Each of these events MUST identify the affected path using a top-level
-`path_id` field of type `uint32` alongside `time`, `name`, and `data`
+Each of these events MUST include the following field in its top-level
+`Event` map alongside `time`, `name`, and `data`
 ({{Section 7 of I-D.ietf-quic-qlog-main-schema}}).
-Its value is the Path ID from {{RFC10069}}, scoped to the connection.
+
+~~~ cddl
+MultipathEventFields = (path_id: uint32)
+~~~
+
+`path_id` identifies the affected path within the connection. It is an
+unsigned 32-bit integer in the range 0 to 4294967295 inclusive
+({{Section 2.1 of RFC10069}}).
 For example, if a packet on path 0 changes the status of path 1, the
 status event has `path_id` 1. The optional qlog `tuple` field identifies
 the network tuple associated with an event. Two Path IDs can share a
 tuple, and a path can change tuples during migration. Tuple details can
 be recorded with `quic:tuple_assigned` ({{I-D.ietf-quic-qlog-quic-events}}).
 
-The event data types extend the qlog main schema as follows. Fields of
-type `QUICPathVarInt` hold the decoded value of a QUIC variable-length
-integer and follow the qlog serialization rules for `uint64`.
+The event data types extend the qlog main schema as follows. The
+optional `error_code` and `sequence_number` fields use the qlog
+`uint64` type. Their values are limited to 0 through 2^62 - 1 by
+{{Sections 4.2 and 4.3 of RFC10069}}.
 
 ~~~ cddl
 $ProtocolEventData /= QUICPathCreated / QUICPathAbandoned /
                       QUICPathStatusUpdated
-
-QUICPathVarInt = 0..4611686018427387903  ; 2^62 - 1
 ~~~
 
 ## path_created
@@ -152,7 +154,7 @@ path state do not produce additional abandonment events.
 ~~~ cddl
 QUICPathAbandoned = {
     initiator: Initiator
-    ? error_code: QUICPathVarInt
+    ? error_code: uint64 .le 4611686018427387903
     * $$quic-pathabandoned-extension
 }
 ~~~
@@ -179,7 +181,7 @@ QUICPathStatusUpdated = {
     initiator: Initiator
     ? old: QUICPathStatus
     new: QUICPathStatus
-    ? sequence_number: QUICPathVarInt
+    ? sequence_number: uint64 .le 4611686018427387903
     * $$quic-pathstatusupdated-extension
 }
 
