@@ -227,7 +227,7 @@ path 0. Later the client abandons path 1 at the application's request.
 # Add a Path identifier to existing QUIC events
 
 When a QUIC event describes an operation or state for one known path,
-implementations MUST include `path_id`, including when its value is 0. 
+implementations MUST include `path_id`, including when its value is 0.
 (The `path_id` field is defined in {{mp-events}}.)
 Implementations
 MUST omit the field when the event is connection-wide or when the associated
