@@ -187,7 +187,7 @@ registry, which was created in Section 15 of [QLOG-MAIN]:
 
    Event schema URI:  urn:ietf:params:qlog:events:quic-multipath
 
-Event-types: `packet_sent`, `packet_received`, `packet_dropped`,
+This document modifies the following QUIC events: `packet_sent`, `packet_received`, `packet_dropped`,
 `packet_buffered`, `packets_acked`, `packet_lost`, `recovery_metrics_updated`,
 `recovery_parameters_set`, `congestion_state_updated`, `ecn_state_updated`,
 `timer_updated`, `mtu_updated`, `spin_bit_updated`, `connection_id_updated`,
