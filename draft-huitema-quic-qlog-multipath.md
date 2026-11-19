@@ -80,16 +80,14 @@ identifies the extension within the `quic` namespace, as specified in
 
 This section is to be removed before publishing as an RFC.
 
-   Only implementations of the final, published RFC can use the events
-   belonging to the event schema with the URI
-   urn:ietf:params:qlog:events:quic#multipath.  Until such an RFC exists,
-   implementations MUST NOT identify themselves using this URI.
+Only implementations of the published RFC can use the unversioned URN
+defined in {{event-schema}}. Until such an RFC exists,
+implementations MUST NOT identify themselves as using this URI.
 
-   Implementations of draft versions of the event schema MUST append the
-   string "-" and the corresponding draft number to the URI.  For
-   example, draft 00 of this document is identified using the URI
-   urn:ietf:params:qlog:events:quic#multipath-00.
-
+Implementations of draft versions of this document MUST
+append a hyphen and the corresponding draft number to that URN. For
+exampledraft 00 of this document is identified using the URI
+`urn:ietf:params:qlog:events:quic#multipath-00`.
 
 # Multipath specific events and event extensions {#mp-events}
 
