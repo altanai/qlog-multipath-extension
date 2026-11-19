@@ -87,7 +87,7 @@ This section is to be removed before publishing as an RFC.
 
 # Multipath specific events and event extensions
 
-## Path identifier
+## Add a Path identifier to existing QUIC events
 
 The `path_id` field identifies the QUIC path associated with a qlog event.
 It is an event-level custom field, at the same level as `time`, `name`, and
