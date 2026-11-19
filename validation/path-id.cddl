@@ -1,0 +1,25 @@
+; Validation overlay for use with the qlog main schema, QUIC event schema,
+; and this document's event schema in one CDDL compilation unit.
+;
+; The base Event and Trace types provide the complete envelope and protocol
+; data validation. Intersecting with these maps constrains the extension
+; field without replacing the upstream schemas' other fields.
+
+MultipathPathID = PathID
+
+MultipathEvent = Event .and {
+    ? path_id: MultipathPathID
+}
+
+; Use this root when the event's semantic context establishes one known path.
+PathScopedEvent = Event .and {
+    path_id: MultipathPathID
+}
+
+MultipathCommonFields = CommonFields .and {
+    ? path_id: MultipathPathID
+}
+
+MultipathTrace = Trace .and {
+    ? common_fields: MultipathCommonFields
+}
