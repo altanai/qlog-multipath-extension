@@ -447,6 +447,7 @@ of connection IDs for path 2.
 {
   "time": 16.5,
   "name": "quic:packet_sent",
+  "path_id": 0,
   "data": {
     "header": { "packet_type": "1RTT", "packet_number": 90 },
     "frames": [
